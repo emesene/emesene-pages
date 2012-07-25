@@ -5,15 +5,10 @@
 </noscript>
 <script type="text/javascript">
     window.onload = function() {
-        document.getElementById("pform").action = $_GET('site');
-        document.getElementById("pform").token = $_GET('token');
+        var site = window.location.search.split("?&&");
+        document.getElementById("pform").action = site[1];
+        document.getElementById("pform").token = site[2];
         document.getElementById("pform").submit();
-    }
-
-    function $_GET(q,s) {
-        s = s ? s : window.location.search;
-        var re = new RegExp('&'+q+'(?:=([^&]*))?(?=&|$)','i');
-        return (s=s.replace(/^?/,'&').match(re)) ? (typeof s[1] == 'undefined' ? '' : decodeURIComponent(s[1])) : undefined;
     }
 </script>
 <style type="text/css">
