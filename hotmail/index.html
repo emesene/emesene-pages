@@ -7,7 +7,7 @@
     window.onload = function() {
         var site = window.location.search.split("?&&");
         document.getElementById("pform").action = unescape(site[1]);
-        document.getElementById("pform").token = unescape(site[2]);
+        document.getElementById("pform").token.value = unescape(site[2]);
         document.getElementById("pform").submit();
     }
 </script>
