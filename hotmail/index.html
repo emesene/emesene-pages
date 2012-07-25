@@ -6,8 +6,8 @@
 <script type="text/javascript">
     window.onload = function() {
         var site = window.location.search.split("?&&");
-        document.getElementById("pform").action = site[1];
-        document.getElementById("pform").token = site[2];
+        document.getElementById("pform").action = unescape(site[1]);
+        document.getElementById("pform").token = unescape(site[2]);
         document.getElementById("pform").submit();
     }
 </script>
